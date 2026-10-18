@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple student task and assignment management dashboard.">
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">STUDENT PRODUCTIVITY</p>
+        <h1>Student Task Manager</h1>
+        <p class="subtitle">Plan your studies. Achieve your goals.</p>
+      </div>
+      <div class="logo" aria-hidden="true">✓</div>
+    </header>
+
+    <section class="stats" aria-label="Task summary">
+      <article class="stat-card">
+        <span>Total Tasks</span>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Pending</span>
+        <strong id="pendingCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Completed</span>
+        <strong id="completedCount">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Add a New Task</h2>
+      <form id="taskForm">
+        <div class="form-grid">
+          <label>
+            Task Title *
+            <input id="taskTitle" type="text"
+              placeholder="e.g. Complete DevOps assignment"
+              maxlength="120" required>
+          </label>
+
+          <label>
+            Subject
+            <input id="taskSubject" type="text"
+              placeholder="e.g. Applied DevOps"
+              maxlength="80">
+          </label>
+
+          <label>
+            Deadline
+            <input id="taskDeadline" type="date">
+          </label>
+
+          <label>
+            Priority
+            <select id="taskPriority">
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+        </div>
+
+        <button class="primary-btn" type="submit">+ Add Task</button>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-header">
+        <div>
+          <h2>My Tasks</h2>
+          <p class="subtitle">Keep track of your assignments.</p>
+        </div>
+        <label class="filter-label">
+          Filter
+          <select id="taskFilter">
+            <option value="All">All Tasks</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+    </section>
+
+    <footer>
+      <p>Student Task Manager · Built with HTML, CSS & JavaScript</p>
+      <p>Applied DevOps Engineering Student Project</p>
+    </footer>
+  </div>
+</body>
+</html>
